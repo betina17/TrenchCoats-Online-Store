@@ -527,8 +527,3 @@ The "uses-a" relationship is often seen when one class uses the methods of anoth
 the case when one class is a utility class providing static methods, like TrenchCoat_Validator in your case.
 */
 
-//puteam sa fac toate variabilele de input sa fie char si nu ma mai complicam la int sa am si conditia sa fie integer, da  nu mai schimb acu
-//daca voiam neap sa lucrez cu 1 si 2 puteam sa le iau sub forma de caractere '1' si '2'
-
-//uita-te in notita .... ca sa vezi explicatii legate de input buffer si de ce ai ales sa faci in felul
-//asta validarea inputului userului. e f imp!!!
