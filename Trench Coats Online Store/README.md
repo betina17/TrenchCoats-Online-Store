@@ -1,6 +1,6 @@
 ﻿# Trench Coats Online Store 
 
-#Features
+## Features
 
 - The application is implemented in C++ and uses layered architecture, separating the domain (product representation), repository(data-base), and user interface, and the files containing the classes which implement the validators, that are handling exceptions, and running tests. This makes the code easier to maintain and extend.
 
