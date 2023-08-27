@@ -17,10 +17,11 @@ void User_Interface::start_menu()
 		Repository* text_file_repository;
 		text_file_repository = new Text_File_Repository;
 		text_file_repository->read_from_file(data_base);
-
+		int total_price_of_shopping_basket = 0;
 
 		while (1)
-		{	
+		{
+				std::cout << "\n";
 				std::cout << "\nFor admin mode, press a";
 				std::cout << "\nFor user mode, press b";
 				std::cout << "\nTo exit the store, press c";
@@ -40,13 +41,14 @@ void User_Interface::start_menu()
 			{
 				std::string admin_option;
 				while (1) {
+					std::cout << "\n";
 					std::cout << "\nPress 1 to display all the trench coats available in the store\n";
 					std::cout << "Press 2 to add a trench to the database\n";
 					std::cout << "Press 3 to remove a trench from the database, if it is out of supply\n";
 					std::cout << "Press 4 to update the information about a trench coat\n";
 					std::cout << "Press 5 to exit administrator mode\n";
 					while (true) {
-						std::cout << "Enter an option (1, 2, or 3): ";
+						std::cout << "Introduce your option>";
 						std::cin >> admin_option;
 						
 						std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Clear any remaining characters in the input buffer
@@ -218,6 +220,7 @@ void User_Interface::start_menu()
 									std::string option_to_update = "e";
 									while (1)
 									{
+										std::cout << "\n";
 										std::cout << "\nTo update the price of the trench coat, press a";
 										std::cout << "\nTo update the quantity of the trench coat, press b";
 										std::cout << "\nTo update the photograph of the trench coat, press c";
@@ -354,6 +357,7 @@ void User_Interface::start_menu()
 				//std::ofstream fout(file_to_save_shopping_basket);
 				while (1)
 				{
+					std::cout << "\n";
 					std::cout << "\nPress 1 to display all the trench coats of the size you want";
 					std::cout << "\nPress 2 to see display the shopping basket in the format of a file that you chose";
 					std::cout << "\nPress 3 to exit user mode";
@@ -434,8 +438,12 @@ void User_Interface::start_menu()
 									std::cout << "\n>";
 									std::cin >> add;
 									std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-									if(add.length() == 1 && add[0] == '+')
+									if (add.length() == 1 && add[0] == '+')
+									{
 										shopping_basket.push_back(data_base[i]);
+										total_price_of_shopping_basket = total_price_of_shopping_basket + data_base[i].get_price();
+										std::cout << "\nNow the total price of your shopping basket is " << total_price_of_shopping_basket << " euros.";
+									}
 									if (add.length() == 1 && (add[0] == '+' || add[0] == '-'))
 									{
 										
